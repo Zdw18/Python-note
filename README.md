@@ -10,3 +10,6 @@ Pythonは1991年Guido van Rossumによって開発された、人気プログラ
 - 自動化
 
 ## 人気のPythonフレームワーク
+- Flask
+- Django
+- FastAPI
