@@ -96,9 +96,10 @@ hello, Tom
 'I am Tom, 33 yeas old'
 ```
 
-	* format
 
-```
+	* format
+ 
+ ```
 name = "John"
 age = 25
 message = "My name is {} and I'm {} years old.".format(name, age)
