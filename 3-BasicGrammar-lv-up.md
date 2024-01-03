@@ -95,14 +95,15 @@ hello, Tom
 >>> "I am %s, %s yeas old" % ("Tom", 33)
 'I am Tom, 33 yeas old'
 ```
-	
-	*  format
-	
-	```
-	name = "John"
+
+	* format
+
+```
+name = "John"
 age = 25
 message = "My name is {} and I'm {} years old.".format(name, age)
-	```
+```
+
 
 * 大文字・小文字変換：
 upper()やlower()メソッドを使用して、文字列を大文字または小文字に変換できます。
