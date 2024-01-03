@@ -147,21 +147,22 @@ upper()やlower()メソッドを使用して、文字列を大文字または小
 
 * 置換(replace) 
 
-	* 文字列内の単一の部分文字列の置換：
+>文字列内の単一の部分文字列の置換：
 	
 ```
 >>> txt = "Hello, Tom"
 >>> txt.replace("Tom", "Jack")
 'Hello, Jack'
 ```
-	* 大文字と小文字を区別せずに置換：
+
+>大文字と小文字を区別せずに置換：
 	
-	```
-	>>> import re
-	>>> text = "Programming is fun, programming is challenging, PROGRAMMING is rewarding."
-	>>> re.sub("programming", "coding", text, flags=re.IGNORECASE)
-     'coding is fun, coding is challenging, coding is rewarding.'
-	```
+```
+>>> import re
+>>> text = "Programming is fun, programming is challenging, PROGRAMMING is rewarding."
+>>> re.sub("programming", "coding", text, flags=re.IGNORECASE)
+'coding is fun, coding is challenging, coding is rewarding.'
+```
 
 *  N文字目の文字の取得
 
@@ -180,45 +181,47 @@ upper()やlower()メソッドを使用して、文字列を大文字または小
 >>> str1[5:7]
 'is'
 ```
+
 *  検索
 
-	* n 演算子:
+>n 演算子:
 	
-	```
+```
 >>> text = "Hello, World!"
 >>> "World" in text
 True
 ```
-	* find() メソッド:
-	findは指定された部分文字列が最初に見つかる位置のインデックスを返します。見つからない場合は -1 を返します。
+
+>find() メソッド:findは指定された部分文字列が最初に見つかる位置のインデックスを返します。見つからない場合は -1 を返します。
 	
-	```
-	>>> text = "Hello, World!"
+```
+>>> text = "Hello, World!"
 >>> text.find("World")
 7
 >>> text.find("dog")
 -1
-	```
-	* index() メソッド:
-	index() メソッドも find() と同様に、指定された部分文字列が最初に見つかる位置のインデックスを返しますが、見つからない場合には ValueError が発生します。
+```
+
+>index() メソッド:index() メソッドも find() と同様に、指定された部分文字列が最初に見つかる位置のインデックスを返しますが、見つからない場合には ValueError が発生します。
 	
-	```
-	>>> text = "Hello, World!"
+```
+>>> text = "Hello, World!"
 >>> text.index("World")
 7
 >>> text.index("dog")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 ValueError: substring not found
-	```
-	* 規表現を使用した検索:re モジュールを使用して正規表現を使って検索することもできます。search() 関数は最初に一致する部分文字列を返します。
+```
+
+>規表現を使用した検索:re モジュールを使用して正規表現を使って検索することもできます。search() 関数は最初に一致する部分文字列を返します。
 	
-	```
-	>>> import re
+```
+>>> import re
 >>> text = "Python is powerful, Python is easy, Python is fun."
 >>> re.search(r"Python", text)
 <re.Match object; span=(0, 6), match='Python'>
-	```
+```
 
 ## 文字列に変換する
 
@@ -237,46 +240,48 @@ ValueError: substring not found
 
 * listを文字列に変換する
 
-	* join
+>join
 	
-	```
-	>>> my_list = ["apple", "banana", "orange"]
+```
+>>> my_list = ["apple", "banana", "orange"]
 >>> ", ".join(my_list)
 'apple, banana, orange'
-	```
+```
 	
-	* スト内包表記と str() 関数:
+>スト内包表記と str() 関数:
 	
-	```
-	>>> my_list = ["apple", "banana", "orange"]
+```
+>>> my_list = ["apple", "banana", "orange"]
 >>> ", ".join([str(item) for item in my_list])
 'apple, banana, orange'
-	```
-	* map() と str() を組み合わせる:
+```
+
+>map() と str() を組み合わせる:
 	
-	```
-	>>> my_list = ["apple", "banana", "orange"]
+```
+>>> my_list = ["apple", "banana", "orange"]
 >>> ", ".join(map(str, my_list))
 'apple, banana, orange'
-	```
+```
 	
 * dictを文字列に変換する
 
-	* str() 関数を使用する:
+>str() 関数を使用する:
 	
-	```
-	>>> my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
+```
+>>> my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
 >>> str(my_dict)
 "{'name': 'John', 'age': 30, 'city': 'New York'}"
-	```
-	* json.dumps() を使用する:
+```
+
+>json.dumps() を使用する:
 	
-	```
-	>>> import json
+```
+>>> import json
 >>> my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
 >>> json.dumps(my_dict)
 '{"name": "John", "age": 30, "city": "New York"}'
-	```
+```
 	
 
 
