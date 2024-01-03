@@ -86,8 +86,8 @@ joinメソッドとリスト/タプルを使って連結する方法もありま
 ```
 * 値の埋め込み
 
-	* sprintf
-	
+>sprintfを使う
+
 ```
 >>> str_hello = "hello, %s"
 >>> print(str_hello % "Tom")
@@ -96,15 +96,13 @@ hello, Tom
 'I am Tom, 33 yeas old'
 ```
 
+>formatを使う
 
-	* format
- 
- ```
+```
 name = "John"
 age = 25
 message = "My name is {} and I'm {} years old.".format(name, age)
 ```
-
 
 * 大文字・小文字変換：
 upper()やlower()メソッドを使用して、文字列を大文字または小文字に変換できます。
