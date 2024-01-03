@@ -94,6 +94,7 @@ hello, Tom
 >>> "I am %s, %s yeas old" % ("Tom", 33)
 'I am Tom, 33 yeas old'
 	```
+	
 	*  format
 	
 	```
