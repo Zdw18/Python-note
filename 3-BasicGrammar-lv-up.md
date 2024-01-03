@@ -86,15 +86,15 @@ joinメソッドとリスト/タプルを使って連結する方法もありま
 ```
 * 値の埋め込み
 
-	*  sprintf
+	* sprintf
 	
-	```
-	>>> str_hello = "hello, %s"
+```
+>>> str_hello = "hello, %s"
 >>> print(str_hello % "Tom")
 hello, Tom
 >>> "I am %s, %s yeas old" % ("Tom", 33)
 'I am Tom, 33 yeas old'
-	```
+```
 	
 	*  format
 	
