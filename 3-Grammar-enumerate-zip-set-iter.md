@@ -1,4 +1,4 @@
-# Python基本構文ーレベルアップ
+# Python: enumerate、zip、set、iter
 
 ## enumerate関数の利用
 enumerate関数を使用すると簡単に要素のインデックスを取得できます。

@@ -1,4 +1,4 @@
-# Python基本ーレベルアップ: リスト(list)、辞書(dict)
+# Python: リスト(list)、辞書(dict)
 
 ## Pythonのlist実際にリンクリストlinked listではありません
 Pythonのlistは、通常の言語での「リスト」のようなデータ構造を表現するために使用されるもので、リンクリスト（linked list）ではありません。実際、Pythonのlistは動的な配列（dynamic array）または可変長配列（dynamic array）として実装されています。
