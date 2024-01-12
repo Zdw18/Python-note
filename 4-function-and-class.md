@@ -121,7 +121,7 @@ print(cat.speak())  # Whiskers says Meow!
 **◾️ポリモーフィズム（polymorphism）:**
 
 ポリモーフィズムは主に以下の2つの形態
->メソッドのオーバーライド、親クラスが持つメソッドを子クラスが再定義することを指します。子クラスは同じメソッド名を持ちながら、親クラスのメソッドをオーバーライドして新しい動作を提供します。
+>メソッドのオーバーライド(Method Overriding)、親クラスが持つメソッドを子クラスが再定義することを指します。子クラスは同じメソッド名を持ちながら、親クラスのメソッドをオーバーライドして新しい動作を提供します。
 
 ```
 class Animal:
@@ -150,3 +150,74 @@ print(animal_run(kangaroo))  # カンガルーは二足跳躍して走る！
 
 ```
 
+>メソッドのオーバーロード（Method Overloading）:
+同じメソッド名を持つ複数のメソッドが、異なる引数リストやデータ型に対して定義されることを指します。これにより、同じメソッド名を使いながら、異なる引数で呼び出すことが可能となります。
+
+<span style="color: red">Pythonでは、メソッドのオーバーロード（Method Overloading）を直接サポートしていませんが、代替手段があります。</span>
+
+* **メソッドが可変長引数[\*args] を受け取る方法**
+
+```
+class Example:
+    def method(self, *args):
+        if len(args) == 1:
+            print("len(args)==1 ")
+            self.print_infomation1(args[0])
+        elif len(args) == 2:
+            print("len(args)==2 ")
+            self.print_infomation2(args[0], args[1])
+        else:
+            print("Unsupported number of arguments")
+
+    def print_infomation1(self, name):
+        print(f"Method with one argument: {name}")
+
+    def print_infomation2(self, name, age):
+        print(f"Method with two arguments: {name}, {age}")
+
+#インスタンスを作成
+example_instance = Example()
+example_instance.method("Tom")
+example_instance.method("Tom", 20)
+example_instance.method("Tom", 20, "hi")
+>>>
+>>>len(args)==1 
+>>>Method with one argument: Tom
+>>>len(args)==2 
+>>>Method with two arguments: Tom, 20
+>>>Unsupported number of arguments
+
+```
+
+>functools モジュールの singledispatch デコレータを使用する方法
+
+```
+from functools import singledispatchmethod
+
+class Example:
+    @singledispatchmethod
+    def print_information(self, arg):
+        print("Generic method:", arg)
+
+    @print_information.register(int)
+    def _print_age(self, arg):
+        print("int arg: age == %s" % arg)
+
+    @print_information.register(str)
+    def _print_name(self, arg):
+        print("str arg: name == %s" % arg)
+    
+    @print_information.register(list)
+    def _print_info(self, arg):
+        for i, e in enumerate(arg):
+            print("arg %s == %s " % (i, e))
+
+example_instance = Example()
+example_instance.print_information(20) # int arg: age == 20
+example_instance.print_information("Tom") # str arg: name == Tom
+example_instance.print_information([20, "Tom", "hello"])
+# arg 0 == 20 
+# arg 1 == Tom 
+# arg 2 == hello 
+
+```
